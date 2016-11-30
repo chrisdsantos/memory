@@ -1,0 +1,196 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.reds.cs245.memorygame.Cards">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonA1"
+                android:layout_weight="1"
+                android:background="@drawable/memcard"
+                tools:ignore="ButtonStyle" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonA2"
+                android:layout_weight="1"
+                android:background="@drawable/memcard"
+                tools:ignore="ButtonStyle" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonA3"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonA4"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonB1"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonB2"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonB3"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonB4"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonC1"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonC2"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonC3"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonC4"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonD1"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonD2"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonD3"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonD4"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonE1"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonE2"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonE3"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+            <Button
+                android:layout_width="16dp"
+                android:layout_height="80dp"
+                android:id="@+id/ButtonE4"
+                android:layout_weight="1"
+                android:background="@drawable/memcard" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:text="@string/try_again_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_tryagain" />
+            <Button
+                android:text="@string/end_game_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_endgame" />
+            <Button
+                android:text="@string/new_game_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button_newgame" />
+        </LinearLayout>
+        <TextView
+            android:text="@string/place_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/score_display"/>
+    </LinearLayout>
+
+</FrameLayout>

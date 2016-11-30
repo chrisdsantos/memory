@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">Memory Game</string>
+    <string name="place_holder">Place Holder</string>
+    <string name="high_scores_title">High Scores</string>
+
+    <string name="testButton">ADD NEW HIGH</string>
+    <string name="game_over_title">Game Over</string>
+    <string name="name_entry_hint">Enter your name here</string>
+    <string name="game_over_negative">MAIN MENU</string>
+    <string name="alert_dialog_positive">OK</string>
+    <string name="final_score">Final Score: %1$d</string>
+
+    <string name="title">Memory\nGame</string>
+    <string name="title_one_line">Memory Game</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="try_again_button">Try Again</string>
+    <string name="new_game_button">New Game</string>
+    <string name="end_game_button">End Game</string>
+    <string name="word_0">POP</string>
+    <string name="word_1">PUSH</string>
+    <string name="word_2">STRING</string>
+    <string name="word_3">STATIC</string>
+    <string name="word_4">HEAP</string>
+    <string name="word_5">STACK</string>
+    <string name="word_6">LOOP</string>
+    <string name="word_7">CHAR</string>
+    <string name="word_8">FLOAT</string>
+    <string name="word_9">INT</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable music</string>
+    <string name="pref_description_social_recommendations">Turn music ON or OFF</string>
+
+    <string name="pref_memory_game_size">Set memory game board size</string>
+    <string-array name="memory_game_size_labels">
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+    </string-array>
+    <string-array name="memory_game_size_values">
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+        <item>14</item>
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+    </string-array>
+
+</resources>

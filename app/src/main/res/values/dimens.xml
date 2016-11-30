@@ -1,0 +1,8 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="high_scores_grid_cell_margin">15dp</dimen>
+    <dimen name="high_scores_grid_cell_margin_land">7dp</dimen>
+    <dimen name="high_scores_title_size">30sp</dimen>
+</resources>
