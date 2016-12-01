@@ -130,10 +130,8 @@ public class Cards extends Fragment implements View.OnClickListener{
         if(v.equals(tryAgainButton)){
             tryAgain();
         }else if(v.equals(endGameButton)){
-            //System.out.println("END GAME");
             endGame();
         }else if(v.equals(newGameButton)){
-            //System.out.println("NEW GAME");
             newGame();
         }else{
             ((Button) v).setText(words[getButtonIndex(v.getId())]);
@@ -187,6 +185,10 @@ public class Cards extends Fragment implements View.OnClickListener{
     //method: noCardsFlipped
     //purpose: set state for when 0/2 cards are flipped
     private void noCardsFlipped(){
+        if(isShown[firstCard] && isShown[secondCard]) {
+            isShown[firstCard] = false;
+            isShown[secondCard] = false;
+        }
         firstCardFlipped = false;
         secondCardFlipped = false;
         tryAgainButton.setClickable(false);
@@ -228,8 +230,6 @@ public class Cards extends Fragment implements View.OnClickListener{
                 score--;
                 scoreView.setText("Score: " + String.valueOf(score));
             }
-            isShown[firstCard] = false;
-            isShown[secondCard] = false;
         }
     }
 
