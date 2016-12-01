@@ -175,11 +175,11 @@ public class Cards extends Fragment implements View.OnClickListener{
         ((Button) getView().findViewById(cardID[firstCard])).setText("");
         ((Button) getView().findViewById(cardID[secondCard])).setText("");
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            ((Button) getView().findViewById(cardID[firstCard])).setBackgroundResource(R.drawable.memcard);
-            ((Button) getView().findViewById(cardID[secondCard])).setBackgroundResource(R.drawable.memcard);
+            getView().findViewById(cardID[firstCard]).setBackgroundResource(R.drawable.memcard);
+            getView().findViewById(cardID[secondCard]).setBackgroundResource(R.drawable.memcard);
         }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            ((Button) getView().findViewById(cardID[firstCard])).setBackgroundResource(R.drawable.memcard_land);
-            ((Button) getView().findViewById(cardID[secondCard])).setBackgroundResource(R.drawable.memcard_land);
+            getView().findViewById(cardID[firstCard]).setBackgroundResource(R.drawable.memcard_land);
+            getView().findViewById(cardID[secondCard]).setBackgroundResource(R.drawable.memcard_land);
         }
         noCardsFlipped();
     }
@@ -187,8 +187,6 @@ public class Cards extends Fragment implements View.OnClickListener{
     //method: noCardsFlipped
     //purpose: set state for when 0/2 cards are flipped
     private void noCardsFlipped(){
-        //firstCard = -1;
-        //secondCard = -1;
         firstCardFlipped = false;
         secondCardFlipped = false;
         tryAgainButton.setClickable(false);
@@ -218,18 +216,14 @@ public class Cards extends Fragment implements View.OnClickListener{
         }
         secondCard = getButtonIndex(v.getId());
         if(isMatch(firstCard, secondCard)){
-            //System.out.println("Give me points!");
             score += 2;
             scoreView.setText("Score: " + String.valueOf(score));
             if(!isAllCardsFlipped()) {
-                //System.out.println("Not done.");
                 noCardsFlipped();
             }else{
-                //System.out.println("Game over!");
                 endGame();
             }
         }else{
-            //System.out.println("Not a match!");
             if (score > 0) {
                 score--;
                 scoreView.setText("Score: " + String.valueOf(score));
@@ -263,6 +257,8 @@ public class Cards extends Fragment implements View.OnClickListener{
         }
     }
 
+    //method: endGame
+    //purpose: creates state for ending the game
     private void endGame() {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this.getContext());
         String boardSize = sharedPref.getString(SettingsActivity.BOARD_SIZE_PREF_KEY, "20");
@@ -283,6 +279,8 @@ public class Cards extends Fragment implements View.OnClickListener{
         df.show(getFragmentManager(),"TAG");
     }
 
+    //method: newGame
+    //purpose: creates state for a new game
     private void newGame() {
         randomize();
 

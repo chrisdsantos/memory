@@ -17,6 +17,7 @@
     <string name="try_again_button">Try Again</string>
     <string name="new_game_button">New Game</string>
     <string name="end_game_button">End Game</string>
+    <string name="score">SCORE: %1$d</string>
     <string name="word_0">POP</string>
     <string name="word_1">PUSH</string>
     <string name="word_2">STRING</string>
