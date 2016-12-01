@@ -170,6 +170,10 @@ public class Cards extends Fragment implements View.OnClickListener{
     //method: tryAgain
     //purpose: set state for when try again button is pressed
     private void tryAgain(){
+        if(isShown[firstCard] && isShown[secondCard]) {
+            isShown[firstCard] = false;
+            isShown[secondCard] = false;
+        }
         ((Button) getView().findViewById(cardID[firstCard])).setText("");
         ((Button) getView().findViewById(cardID[secondCard])).setText("");
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
@@ -185,10 +189,6 @@ public class Cards extends Fragment implements View.OnClickListener{
     //method: noCardsFlipped
     //purpose: set state for when 0/2 cards are flipped
     private void noCardsFlipped(){
-        if(isShown[firstCard] && isShown[secondCard]) {
-            isShown[firstCard] = false;
-            isShown[secondCard] = false;
-        }
         firstCardFlipped = false;
         secondCardFlipped = false;
         tryAgainButton.setClickable(false);
