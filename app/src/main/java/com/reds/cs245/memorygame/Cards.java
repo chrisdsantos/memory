@@ -110,7 +110,7 @@ public class Cards extends Fragment implements View.OnClickListener{
             }
         }
 
-        if(firstCardFlipped){
+        if(firstCardFlipped) {
             oneCardFlipped(cardsButton[firstCard]);
             if(secondCardFlipped){
                 twoCardsFlipped(cardsButton[secondCard]);
@@ -289,6 +289,7 @@ public class Cards extends Fragment implements View.OnClickListener{
         int size = Integer.parseInt(boardSize);
 
         firstCardFlipped = false;
+        secondCardFlipped = false;
         tryAgainButton.setClickable(true);
         endGameButton.setClickable(true);
         newGameButton.setClickable(true);
