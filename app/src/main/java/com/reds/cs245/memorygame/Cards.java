@@ -1,3 +1,19 @@
+/*******************************************************************************
+ *    file: Cards.java
+ *  author: Omar Rodriguez
+ *          Nahid Enayatzadeh
+ *          Marc Deaso
+ *          Christopher Santos
+ *          Jazmin Guerrero
+ *   class: CS245 - Programming Graphical User Interfaces
+ *
+ *  assignment: Android APP
+ *  date last modified: 12/1/2016
+ *
+ * Purpose: creates the card (game) activity page with the card fragment
+ *
+ /*******************************************************************************/
+
 package com.reds.cs245.memorygame;
 
 import android.content.SharedPreferences;
@@ -110,10 +126,11 @@ public class Cards extends Fragment implements View.OnClickListener{
             }
         }
 
+        //recreate state before rotation
         if(firstCardFlipped) {
             oneCardFlipped(cardsButton[firstCard]);
             if(secondCardFlipped){
-                twoCardsFlipped(cardsButton[secondCard]);
+                twoCardsFlipped();
             }
         }else{
             noCardsFlipped();
@@ -230,6 +247,16 @@ public class Cards extends Fragment implements View.OnClickListener{
                 score--;
                 scoreView.setText("Score: " + String.valueOf(score));
             }
+        }
+    }
+
+    //method: twoCardsFlipped
+    //purpose: set state for when 2/2 cards are flipped, no view attached (rotation fix)
+    private void twoCardsFlipped() {
+        secondCardFlipped = true;
+        tryAgainButton.setClickable(true);
+        for (Button card : cardsButton) {
+            card.setClickable(false);
         }
     }
 

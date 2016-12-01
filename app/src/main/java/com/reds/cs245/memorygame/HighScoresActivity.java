@@ -1,3 +1,19 @@
+/*******************************************************************************
+ *    file: HighScoresActivity.java
+ *  author: Omar Rodriguez
+ *          Nahid Enayatzadeh
+ *          Marc Deaso
+ *          Christopher Santos
+ *          Jazmin Guerrero
+ *   class: CS245 - Programming Graphical User Interfaces
+ *
+ *  assignment: Android APP
+ *  date last modified: 12/1/2016
+ *
+ * Purpose: creates the high scores page
+ *
+ /*******************************************************************************/
+
 package com.reds.cs245.memorygame;
 
 import android.content.SharedPreferences;
