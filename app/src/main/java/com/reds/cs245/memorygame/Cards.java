@@ -1,6 +1,7 @@
 package com.reds.cs245.memorygame;
 
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.DialogFragment;
@@ -25,7 +26,6 @@ public class Cards extends Fragment implements View.OnClickListener{
     private Button endGameButton;
     private TextView scoreView;
     private static String[] words = new String[20];
-    private static int[][] cardMatches = new int[10][2];
     private boolean firstCardFlipped = false;
     private int firstCard;
     private int secondCard;
@@ -75,6 +75,7 @@ public class Cards extends Fragment implements View.OnClickListener{
 
         View myView = inflater.inflate(R.layout.fragment_cards, container, false);
 
+
         newGameButton = (Button) myView.findViewById(R.id.button_newgame);
         newGameButton.setOnClickListener(this);
 
@@ -114,6 +115,7 @@ public class Cards extends Fragment implements View.OnClickListener{
             newGame();
         }else{
             ((Button) v).setText(words[getButtonIndex(v.getId())]);
+            v.setBackgroundResource(R.drawable.blankcard);
             isShown[getButtonIndex(v.getId())] = true;
             if(firstCardFlipped == false){
                 oneCardFlipped(v);
@@ -146,11 +148,18 @@ public class Cards extends Fragment implements View.OnClickListener{
     private void tryAgain(){
         ((Button) getView().findViewById(cardID[firstCard])).setText("");
         ((Button) getView().findViewById(cardID[secondCard])).setText("");
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            ((Button) getView().findViewById(cardID[firstCard])).setBackgroundResource(R.drawable.memcard);
+            ((Button) getView().findViewById(cardID[secondCard])).setBackgroundResource(R.drawable.memcard);
+        }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            ((Button) getView().findViewById(cardID[firstCard])).setBackgroundResource(R.drawable.memcard_land);
+            ((Button) getView().findViewById(cardID[secondCard])).setBackgroundResource(R.drawable.memcard_land);
+        }
         noCardsFlipped();
     }
 
     //method: noCardsFlipped
-    //purpose: set state for when zero out of two cards are flipped
+    //purpose: set state for when 0/2 cards are flipped
     private void noCardsFlipped(){
         firstCard = -1;
         secondCard = -1;
@@ -162,7 +171,7 @@ public class Cards extends Fragment implements View.OnClickListener{
     }
 
     //method: oneCardFlipped
-    //purpose: set state for when one out of two cards are flipped
+    //purpose: set state for when 1/2 are flipped
     private void oneCardFlipped(View v){
         firstCardFlipped = true;
         tryAgainButton.setClickable(false);
@@ -173,7 +182,7 @@ public class Cards extends Fragment implements View.OnClickListener{
     }
 
     //method: twoCardsFlipped
-    //purpose: set state for when two out of two cards are flipped
+    //purpose: set state for when 2/2 cards are flipped
     private void twoCardsFlipped(View v){
         tryAgainButton.setClickable(true);
         for(Button card : cardsButton){
@@ -201,7 +210,7 @@ public class Cards extends Fragment implements View.OnClickListener{
     }
 
     //method: isAllCardsFlipped
-    //purpose: check if all cards have been flipped
+    //purpose: check if all cards on board have been flipped
     private boolean isAllCardsFlipped(){
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this.getContext());
         String boardSize = sharedPref.getString(SettingsActivity.BOARD_SIZE_PREF_KEY, "20");

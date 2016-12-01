@@ -22,24 +22,28 @@
                 android:layout_height="45dp"
                 android:id="@+id/ButtonA1"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonA2"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonA3"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonA4"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
 
         </LinearLayout>
@@ -53,24 +57,28 @@
                 android:layout_height="45dp"
                 android:id="@+id/ButtonB1"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonB2"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonB3"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonB4"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
 
         </LinearLayout>
@@ -84,24 +92,28 @@
                 android:layout_height="45dp"
                 android:id="@+id/ButtonC1"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonC2"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonC3"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonC4"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
 
         </LinearLayout>
@@ -115,24 +127,28 @@
                 android:layout_height="45dp"
                 android:id="@+id/ButtonD1"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonD2"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonD3"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonD4"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
 
         </LinearLayout>
@@ -146,24 +162,28 @@
                 android:layout_height="45dp"
                 android:id="@+id/ButtonE1"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonE2"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonE3"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
             <Button
                 android:layout_width="16dp"
                 android:layout_height="45dp"
                 android:id="@+id/ButtonE4"
                 android:layout_weight="1"
+                android:fontFamily="serif"
                 android:background="@drawable/memcard_land" />
 
         </LinearLayout>
@@ -175,17 +195,20 @@
                 android:layout_width="117dp"
                 android:layout_height="58dp"
                 android:id="@+id/button_tryagain"
+                android:fontFamily="sans-serif"
                 android:text="@string/try_again_button" />
             <Button
                 android:layout_width="117dp"
                 android:layout_height="58dp"
                 android:id="@+id/button_endgame"
+                android:fontFamily="sans-serif"
                 android:text="@string/end_game_button" />
 
             <Button
                 android:layout_width="117dp"
                 android:layout_height="58dp"
                 android:id="@+id/button_newgame"
+                android:fontFamily="sans-serif"
                 android:text="@string/new_game_button" />
         </LinearLayout>
 

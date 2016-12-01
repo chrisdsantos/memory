@@ -27,28 +27,6 @@
         android:id="@+id/fragment_cards"
         tools:layout="@layout/fragment_cards" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:layout_width="117dp"
-                android:layout_height="58dp"
-                android:id="@+id/button_tryagain"
-                android:text="@string/try_again_button" />
-            <Button
-                android:layout_width="117dp"
-                android:layout_height="58dp"
-                android:id="@+id/button_endgame"
-                android:text="@string/end_game_button" />
-
-            <Button
-                android:layout_width="117dp"
-                android:layout_height="58dp"
-                android:id="@+id/button_newgame"
-                android:text="@string/new_game_button" />
-        </LinearLayout>
-
     </LinearLayout>
 
 </RelativeLayout>
