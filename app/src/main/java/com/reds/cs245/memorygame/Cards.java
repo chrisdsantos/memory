@@ -27,11 +27,11 @@ public class Cards extends Fragment implements View.OnClickListener{
     private TextView scoreView;
     private static String[] words = new String[20];
     private boolean firstCardFlipped = false;
+    private boolean secondCardFlipped = false;
     private int firstCard;
     private int secondCard;
     private int[] cardID;
     private int score;
-    private String[] visibleWords;
     private boolean[] isShown;
 
     public Cards() {
@@ -45,12 +45,13 @@ public class Cards extends Fragment implements View.OnClickListener{
         if (savedInstanceState != null) {
             // Restore value of members from saved state
             firstCardFlipped = savedInstanceState.getBoolean("firstCardFlipped");
+            secondCardFlipped = savedInstanceState.getBoolean("secondCardFlipped");
             firstCard = savedInstanceState.getInt("firstCard");
             secondCard = savedInstanceState.getInt("secondCard");
             cardID = savedInstanceState.getIntArray("cardID");
             words = savedInstanceState.getStringArray("words");
-            visibleWords = savedInstanceState.getStringArray("visibleWords");
             isShown = savedInstanceState.getBooleanArray("isShown");
+            score = savedInstanceState.getInt("score");
 
         } else {
             try{
@@ -97,6 +98,27 @@ public class Cards extends Fragment implements View.OnClickListener{
             cardsButton[i].setOnClickListener(this);
         }
 
+        for (int i = 0; i < 20; i++) {
+            if(isShown[i]) {
+                cardsButton[i].setText(words[i]);
+                if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    cardsButton[i].setBackgroundResource(R.drawable.blankcard);
+                }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                    cardsButton[i].setBackgroundResource(R.drawable.blankcard_land);
+                }
+                cardsButton[i].setClickable(false);
+            }
+        }
+
+        if(firstCardFlipped){
+            oneCardFlipped(cardsButton[firstCard]);
+            if(secondCardFlipped){
+                twoCardsFlipped(cardsButton[secondCard]);
+            }
+        }else{
+            noCardsFlipped();
+        }
+
         scoreView = (TextView) myView.findViewById(R.id.score_display);
         scoreView.setText("Score: " + String.valueOf(score));
 
@@ -115,7 +137,11 @@ public class Cards extends Fragment implements View.OnClickListener{
             newGame();
         }else{
             ((Button) v).setText(words[getButtonIndex(v.getId())]);
-            v.setBackgroundResource(R.drawable.blankcard);
+            if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                v.setBackgroundResource(R.drawable.blankcard);
+            }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                v.setBackgroundResource(R.drawable.blankcard_land);
+            }
             isShown[getButtonIndex(v.getId())] = true;
             if(firstCardFlipped == false){
                 oneCardFlipped(v);
@@ -132,13 +158,13 @@ public class Cards extends Fragment implements View.OnClickListener{
         // This bundle will be passed to onCreate if the process is
         // killed and restarted.
         savedInstanceState.putBoolean("firstCardFlipped", firstCardFlipped);
+        savedInstanceState.putBoolean("secondCardFlipped", secondCardFlipped);
         savedInstanceState.putInt("firstCard", firstCard);
         savedInstanceState.putInt("secondCard", secondCard);
         savedInstanceState.putIntArray("cardID", cardID);
         savedInstanceState.putStringArray("words", words);
         savedInstanceState.putBooleanArray("isShown", isShown);
-        visibleWords = new String[20];
-        savedInstanceState.putStringArray("visibleWords", visibleWords);
+        savedInstanceState.putInt("score", score);
     }
 
     //*** GAME STATES ***
@@ -161,9 +187,10 @@ public class Cards extends Fragment implements View.OnClickListener{
     //method: noCardsFlipped
     //purpose: set state for when 0/2 cards are flipped
     private void noCardsFlipped(){
-        firstCard = -1;
-        secondCard = -1;
+        //firstCard = -1;
+        //secondCard = -1;
         firstCardFlipped = false;
+        secondCardFlipped = false;
         tryAgainButton.setClickable(false);
         for(Button card : cardsButton){
             card.setClickable(true);
@@ -184,6 +211,7 @@ public class Cards extends Fragment implements View.OnClickListener{
     //method: twoCardsFlipped
     //purpose: set state for when 2/2 cards are flipped
     private void twoCardsFlipped(View v){
+        secondCardFlipped = true;
         tryAgainButton.setClickable(true);
         for(Button card : cardsButton){
             card.setClickable(false);
@@ -206,6 +234,8 @@ public class Cards extends Fragment implements View.OnClickListener{
                 score--;
                 scoreView.setText("Score: " + String.valueOf(score));
             }
+            isShown[firstCard] = false;
+            isShown[secondCard] = false;
         }
     }
 
@@ -242,7 +272,13 @@ public class Cards extends Fragment implements View.OnClickListener{
 
         for (int i = 0; i < size; i++) {
             cardsButton[i].setText(words[i]);
+            if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                cardsButton[i].setBackgroundResource(R.drawable.blankcard);
+            }else if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                cardsButton[i].setBackgroundResource(R.drawable.blankcard_land);
+            }
         }
+
         DialogFragment df = GameOverDialog.newInstance(size, score);
         df.show(getFragmentManager(),"TAG");
     }
